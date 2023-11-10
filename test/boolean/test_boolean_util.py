@@ -13,6 +13,11 @@ class TestBooleanUtil(unittest.TestCase):
     self.assertNotEqual(is_truelike("0"), True)
     self.assertNotEqual(is_truelike(0), True)
     self.assertEqual(is_truelike(1), True)
+    self.assertEqual(is_truelike("1"), True)
+    self.assertEqual(is_truelike("T"), True)
+    self.assertEqual(is_truelike("YES"), True)
+    self.assertEqual(is_truelike("Y"), True)
+    self.assertNotEqual(is_truelike("N"), True)
 
 if __name__ == '__main__':
     unittest.main()
