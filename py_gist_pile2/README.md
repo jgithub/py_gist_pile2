@@ -11,7 +11,7 @@
 
 ```
 user@MacBook-Pro py-gist-pile % make test
-cd /Users/user/project/py-gist-pile && PYTHONPATH="./src:./src/date:./src/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 -m unittest discover -v
+cd /Users/user/project/py-gist-pile && PYTHONPATH="./py_gist_pile2:./py_gist_pile2/date:./py_gist_pile2/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 -m unittest discover -v
 test_does_this_work (test.date.test_date_provider_service.TestDateProvider.test_does_this_work) ... ok
 test_greeting_provider_service (test.greeting.test_greeting_provider_service.TestGreetingProviderService.test_greeting_provider_service) ... Wed, 08 Nov 2023 15:52:32 UTC [ DEBUG] greeting.GreetingProviderServiceImpl The hour is 1
 ok
@@ -22,7 +22,7 @@ Ran 3 tests in 0.001s
 
 OK
 user@MacBook-Pro py-gist-pile % make run
-cd /Users/user/project/py-gist-pile && PYTHONPATH="./src:./src/date:./src/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 src
+cd /Users/user/project/py-gist-pile && PYTHONPATH="./py_gist_pile2:./py_gist_pile2/date:./py_gist_pile2/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 py_gist_pile2
 Wed, 08 Nov 2023 15:45:47 UTC [ DEBUG] main.py Found __name__ == '__main__'
 Wed, 08 Nov 2023 15:45:47 UTC [ DEBUG] greeting.GreetingProviderServiceImpl The hour is 9
 Wed, 08 Nov 2023 15:45:47 UTC [NOTICE] main.py main(): I will greet you with: Good morning.

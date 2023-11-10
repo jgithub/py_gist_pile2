@@ -32,7 +32,7 @@ class GreetingProviderServiceImpl(GreetingProviderService):
     # ------8<-----------------
     # ```
     # user@MacBook-Pro py-gist-pile % make test
-    # cd /Users/user/project/py-gist-pile && PYTHONPATH="./src:./src/date:./src/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 -m unittest discover -v
+    # cd /Users/user/project/py-gist-pile && PYTHONPATH="./py_gist_pile2:./py_gist_pile2/date:./py_gist_pile2/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 -m unittest discover -v
     # test_does_this_work (test.date.test_date_provider_service.TestDateProvider.test_does_this_work) ... ok
     # test_greeting_provider_service (test.greeting.test_greeting_provider_service.TestGreetingProviderService.test_greeting_provider_service) ... Wed, 08 Nov 2023 16:23:37 UTC [ DEBUG] greeting.GreetingProviderServiceImpl The hour is 16
     # FAIL
