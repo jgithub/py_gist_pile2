@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 REQUIRED_PACKAGES = [
 ]
 
-__version__ = "v0.0.8"
+__version__ = "v0.0.9"
 
 
 setup(
