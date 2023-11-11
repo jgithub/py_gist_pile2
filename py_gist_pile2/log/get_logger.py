@@ -20,6 +20,14 @@ class Logger:
     def __init__(self, loggerName):
         self.loggerName = loggerName
 
+    def fire_the_log(self, completeMsg, jsonContext={}, *extra):
+        if not extra:
+            # TODO: consider python logger here instead of using `print`
+            print(completeMsg)
+        else:
+            # TODO: consider python logger here instead of using `print`
+            print(completeMsg, *extra)
+
     def buildLogMsg(self, severity, msg, jsonContext):
         messageParts = []
         if is_true_like(os.environ.get("LOG_PREPEND_TIMESTAMP")):
@@ -35,48 +43,37 @@ class Logger:
     def trace(self, msg, jsonContext={}, *extra):
         if is_true_like(os.environ.get("LOG_TRACE")):
             completeMsg = self.buildLogMsg("[ TRACE]", msg, jsonContext)
-            if not extra:
-                # TODO: consider python logger here instead of using `print`
-                print(completeMsg)
-            else:
-                print(completeMsg, *extra)
+            self.fire_the_log(completeMsg, jsonContext, *extra)
 
     def debug(self, msg, jsonContext={}, *extra):
         if is_true_like(os.environ.get("LOG_DEBUG")):
             completeMsg = self.buildLogMsg("[ DEBUG]", msg, jsonContext)
-            if not extra:
-                print(completeMsg)
-            else:
-                print(completeMsg, *extra)
+            self.fire_the_log(completeMsg, jsonContext, *extra)
+
 
     def info(self, msg, jsonContext={}, *extra):
         if is_true_like(os.environ.get("LOG_INFO")):
             completeMsg = self.buildLogMsg("[  INFO]", msg, jsonContext)
-            if not extra:
-                print(completeMsg)
-            else:
-                print(completeMsg, *extra)
+            self.fire_the_log(completeMsg, jsonContext, *extra)
+
 
     def notice(self, msg, jsonContext={}, *extra):
         completeMsg = self.buildLogMsg("[NOTICE]", msg, jsonContext)
-        if not extra:
-            print(completeMsg)
-        else:
-            print(completeMsg, *extra)
+        self.fire_the_log(completeMsg, jsonContext, *extra)
+
 
     def warn(self, msg, jsonContext={}, *extra):
         completeMsg = self.buildLogMsg("[  WARN]", msg, jsonContext)
-        if not extra:
-            print(completeMsg)
-        else:
-            print(completeMsg, *extra)
+        self.fire_the_log(completeMsg, jsonContext, *extra)
+
 
     def error(self, msg, jsonContext={}, *extra):
         completeMsg = self.buildLogMsg("[ ERROR]", msg, jsonContext)
-        if not extra:
-            print(completeMsg)
-        else:
-            print(completeMsg, *extra)
+        self.fire_the_log(completeMsg, jsonContext, *extra)
+        # TODO:  Increment an error counter on stathat
+        # TODO:  Send a slack message
+        # TODO:  Increment an error counter on mixpanel 
+
 
 def get_logger(loggerName):
     return LoggerFactory.getLogger(loggerName)
