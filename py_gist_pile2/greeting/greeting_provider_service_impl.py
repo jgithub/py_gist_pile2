@@ -31,8 +31,8 @@ class GreetingProviderServiceImpl(GreetingProviderService):
 
     # ------8<-----------------
     # ```
-    # user@MacBook-Pro py-gist-pile % make test
-    # cd /Users/user/project/py-gist-pile && PYTHONPATH="./py_gist_pile2:./py_gist_pile2/date:./py_gist_pile2/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 -m unittest discover -v
+    # user@MacBook-Pro py_gist_pile2 % make test
+    # cd /Users/user/project/py_gist_pile2 && PYTHONPATH="./py_gist_pile2:./py_gist_pile2/date:./py_gist_pile2/greeting" LOG_PREPEND_TIMESTAMP=1 LOG_DEBUG=1 python3 -m unittest discover -v
     # test_does_this_work (test.date.test_date_provider_service.TestDateProvider.test_does_this_work) ... ok
     # test_greeting_provider_service (test.greeting.test_greeting_provider_service.TestGreetingProviderService.test_greeting_provider_service) ... Wed, 08 Nov 2023 16:23:37 UTC [ DEBUG] greeting.GreetingProviderServiceImpl The hour is 16
     # FAIL
@@ -42,7 +42,7 @@ class GreetingProviderServiceImpl(GreetingProviderService):
     # FAIL: test_greeting_provider_service (test.greeting.test_greeting_provider_service.TestGreetingProviderService.test_greeting_provider_service)
     # ----------------------------------------------------------------------
     # Traceback (most recent call last):
-    #   File "/Users/user/project/py-gist-pile/test/greeting/test_greeting_provider_service.py", line 16, in test_greeting_provider_service
+    #   File "/Users/user/project/py_gist_pile2/test/greeting/test_greeting_provider_service.py", line 16, in test_greeting_provider_service
     #     self.assertEqual(greeting_provider_service.get_greeting(), "Good morning.")
     # AssertionError: 'Good afternoon.' != 'Good morning.'
     # - Good afternoon.
